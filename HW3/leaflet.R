@@ -1,0 +1,25 @@
+##install.packages("leaflet")
+
+library("leaflet")
+
+m<-leaflet()
+
+m <- addTiles(m)
+
+## hmm - VB! 
+m <- addCircleMarkers(m, lng=-118.272608942037, lat=34.027350612036194,label="Home", radius=2, fillOpacity=1.0,fill = TRUE, fillColor ="red")
+m <- addCircleMarkers(m, lng=-118.28304275126855, lat=34.02167573271006,label="Leavey Library",     radius=2, fillOpacity=1.0,fill = TRUE, fillColor ="red")
+m <- addCircleMarkers(m, lng=-118.2840443224339, lat=34.0203046616926,label="Doheny Library",      radius=2, fillOpacity=1.0,fill = TRUE, fillColor ="red")
+m <- addCircleMarkers(m, lng=-118.28343140265576, lat=34.02064083976218,label="EastAsian Lib",      radius=2, fillOpacity=1.0,fill = TRUE, fillColor ="red")
+m <- addCircleMarkers(m, lng=-118.28354532472655, lat=34.019924995912724,label="CinematArts Lib",      radius=2, fillOpacity=1.0,fill = TRUE, fillColor ="red")
+m <- addCircleMarkers(m, lng=-118.28495982114066, lat=34.018998406859225,label="Law Library",      radius=2, fillOpacity=1.0,fill = TRUE, fillColor ="red")
+m <- addCircleMarkers(m, lng=-118.28664120466127, lat=34.01900065622015,label="Hoose Lib",      radius=2, fillOpacity=1.0,fill = TRUE, fillColor ="red")
+m <- addCircleMarkers(m, lng=-118.28456729661514, lat=34.02050593405413,label="Fountain1",      radius=2, fillOpacity=1.0,fill = TRUE, fillColor ="red")
+m <- addCircleMarkers(m, lng=-118.28497700404216, lat=34.019113364661216,label="Dry pool",      radius=2, fillOpacity=1.0,fill = TRUE, fillColor ="red")
+m <- addCircleMarkers(m, lng=-118.28670082624842, lat=34.018632327238116,label="Fast pool",      radius=2, fillOpacity=1.0,fill = TRUE, fillColor ="red")
+m <- addCircleMarkers(m, lng=-118.28531716702426, lat=34.02020652748128,label="Fountain2",      radius=2, fillOpacity=1.0,fill = TRUE, fillColor ="red")
+m <- addCircleMarkers(m, lng=-118.28561602439056, lat=34.022221505919326,label="Pit pool",      radius=2, fillOpacity=1.0,fill = TRUE, fillColor ="red")
+m <- addCircleMarkers(m, lng=-118.28385462591636, lat=34.02259087916958,label="Gate pool",      radius=2, fillOpacity=1.0,fill = TRUE, fillColor ="red")
+
+m
+

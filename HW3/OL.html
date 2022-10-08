@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>OL</title>
+<script src="https://openlayers.org/api/OpenLayers.js">
+</script>
+<style>
+#map {
+    width:400px;
+    height:400px;
+}
+</style>
+</head>
+
+<body>
+<div id="map"></div>
+
+
+<script>
+// your JS code 
+if(typeof(Storage) !== 'undefined') {
+// my data is a label/ID for what we store, which is the object stored in variable d, 
+// e.g. whose value is {"k1":[{"a":5, "b":-6}]}, which consists of a key called k1 
+// with an array as its value: [{"a":5, "b":-6}]
+    var d = {"Home":[{"long":-118.272608942037, "lat":34.027350612036194}],
+            "Leavey Library":[{"long":-118.28304275126855, "lat":34.02167573271006}],
+            "Doheny Library":[{"long":-118.2840443224339, "lat":34.0203046616926}],
+            "EastAsian Lib":[{"long":-118.28343140265576, "lat":34.02064083976218}],
+            "CinematArts Lib":[{"long":-118.28354532472655, "lat":34.019924995912724}],
+            "Law Library":[{"long":-118.28495982114066, "lat":34.018998406859225}],
+            "Hoose Lib":[{"long":-118.28664120466127, "lat":34.01900065622015}],
+            "Fountain1":[{"long":-118.28456729661514, "lat":34.02050593405413}],
+            "Dry pool":[{"long":-118.28497700404216, "lat":34.019113364661216}],
+            "Fast pool":[{"long":-118.28670082624842, "lat":34.018632327238116}],
+            "Fountain2":[{"long":-118.28531716702426, "lat":34.02020652748128}],
+            "Pit pool":[{"long":-118.28561602439056, "lat":34.022221505919326}],
+            "Gate pool":[{"long":-118.28385462591636, "lat":34.02259087916958}]};
+    localStorage.setItem("myData",JSON.stringify(d));
+    
+    //next [presumably after closing the browser, and reloading our html]
+    // we can fetch the stored data, just by supplying its key:
+    var dataStored = JSON.parse(localStorage.getItem("myData"));
+    // verify that we fetched our data correctly
+    // console.log(dataStored); 
+    // we can iterate through our array [of points], like so:
+    // var a = dataStored.Lorenzo; // a will contain our array
+    // for(var indx in a) { // indx is 0,1,2...
+    // console.log(a[indx]); // this could be a single point
+    // }
+
+    // here's how to plot points on a map, using OpenLayers:
+    // [this is code I mildly modified, from an existing source]
+    function initMap() {
+            map = new OpenLayers.Map('map');
+            basemap = new OpenLayers.Layer.OSM("Simple OSM Map", ["https://a.tile.openstreetmap.org/${z}/${x}/${y}.png",
+   "https://b.tile.openstreetmap.org/${z}/${x}/${y}.png",
+   "https://c.tile.openstreetmap.org/${z}/${x}/${y}.png"]);
+            map.addLayer(basemap);
+            markers = new OpenLayers.Layer.Markers("Markers");
+            map.addLayer(markers);
+    }// initMap()
+
+    function addMarker(latitude, longitude) {
+            var lonLat = new OpenLayers.LonLat(longitude, latitude)
+                .transform(
+                    new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                    map.getProjectionObject() // to Spherical Mercator Projection
+            );
+            var point = new OpenLayers.Marker(lonLat);
+            markers.addMarker(point);
+            map.setCenter(lonLat,18); // second arg is zoom level
+            //console.log(latitude + ", " + longitude);
+    }// addMarker()
+
+
+    // load and setup map layers
+    initMap();
+
+    // here's how to plot locs of myData on the map!
+    for(let i of Object.values(dataStored)) {
+        addMarker(i[0].lat,i[0].long); 
+    }
+}
+else {
+    document.querySelector('#map').innerHTML="<h1>Don't Support Local Storage</h1>";
+}
+</script>
+
+</body>
+
+</html>
+
+<!--
+https://www.google.com/maps/search/usc/@34.0205363,-118.2855507,36m/data=!3m1!1e3
+-->

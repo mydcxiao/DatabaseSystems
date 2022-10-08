@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Style id="z1">
+<IconStyle><Icon><href>http://www.google.com/intl/en_us/mapfiles/ms/micons/blue-dot.png</href></Icon></IconStyle>
+</Style>
+<Placemark><name>Home</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.272608942037,34.027350612036194</coordinates></Point>
+</Placemark>
+<Placemark><name>Leavey Library</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28304275126855,34.02167573271006</coordinates></Point>
+</Placemark>
+<Placemark><name>Doheny Library</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2840443224339,34.0203046616926</coordinates></Point>
+</Placemark>
+<Placemark><name>EastAsian Lib</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28343140265576,34.02064083976218</coordinates></Point>
+</Placemark>
+<Placemark><name>CinematArts Lib</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28354532472655,34.019924995912724</coordinates></Point>
+</Placemark>
+<Placemark><name>Law Library</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28495982114066,34.018998406859225</coordinates></Point>
+</Placemark>
+<Placemark><name>Hoose Lib</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28664120466127,34.01900065622015</coordinates></Point>
+</Placemark>
+<Placemark><name>Fountain1</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28456729661514,34.02050593405413</coordinates></Point>
+</Placemark>
+<Placemark><name>Dry pool</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28497700404216,34.019113364661216</coordinates></Point>
+</Placemark>
+<Placemark><name>Fast pool</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28670082624842,34.018632327238116</coordinates></Point>
+</Placemark>
+<Placemark><name>Fountain2</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28531716702426,34.02020652748128</coordinates></Point>
+</Placemark>
+<Placemark><name>Pit pool</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28561602439056,34.022221505919326</coordinates></Point>
+</Placemark>
+<Placemark><name>Gate pool</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28385462591636,34.02259087916958</coordinates></Point>
+</Placemark>
+
+<Placemark> 
+ <name>The LibPolygon</name>
+ <Polygon>
+	 <extrude>1</extrude>
+	 <altitudeMode>relativeToGround</altitudeMode>
+	 <style>
+            <LineStyle>
+              <color>01400ff</color>
+              <width>5</width>
+            </LineStyle>
+            <PolyStyle>
+              <color>371400ff</color>
+            </PolyStyle>
+         </style>
+	 <outerBoundaryIs>
+		<LinearRing>
+			<coordinates>
+                            -118.28670082624842,34.018632327238116,10
+                            -118.28664120466127,34.01900065622015,10
+                            -118.28561602439056,34.022221505919326,10
+                            -118.272608942037,34.027350612036194,10
+                            -118.28354532472655,34.019924995912724,10
+                            -118.28495982114066,34.018998406859225,10
+                            -118.28670082624842,34.018632327238116,10
+			</coordinates>
+		 </LinearRing>
+ 	 </outerBoundaryIs>
+ </Polygon>
+ </Placemark>
+</Document></kml>
